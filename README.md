@@ -243,7 +243,12 @@ sudo apt-get install -y trivy
   ```
   - <b>Install argocd CLI</b>
   ```bash
-  sudo curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.4.7/argocd-linux-amd64
+  curl -sSL -o argocd-linux-amd64 \https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+
+  sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
+
+  rm argocd-linux-amd64
+  
   ```
   - <b>Provide executable permission</b>
   ```bash
